@@ -13,7 +13,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <a href="/" className="text-xl font-bold font-display">
-              LaunchPad
+              МатемАИ
             </a>
             <div className="hidden md:flex items-center gap-6">
               <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
@@ -31,7 +31,7 @@ export function Navigation() {
             <ShinyButton variant="secondary" className="hidden sm:inline-flex">
               Войти
             </ShinyButton>
-            <ShinyButton>Начать</ShinyButton>
+            <ShinyButton>Попробовать бесплатно</ShinyButton>
           </div>
         </div>
       </div>

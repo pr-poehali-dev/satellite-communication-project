@@ -25,16 +25,16 @@ export function HeroSection() {
         {/* Left Column - Content */}
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-6 font-display">
-            Быстрый путь к финансированию SaaS и оборудования
+            Реши любую задачу по математике с помощью ИИ
           </h1>
 
           <p className="text-lg text-muted-foreground text-balance mb-8 leading-relaxed max-w-xl">
-            Выберите LaunchPad как финансового партнера, чтобы закрывать сделки быстрее и увеличить доход. Одобряйте
-            клиентов, настраивайте предложения и выигрывайте сделки за минуты.
+            МатемАИ объясняет решение задач из школьных учебников простым языком. Просто загрузи задачу — ИИ покажет
+            пошаговое решение и поможет разобраться, а не просто даст ответ.
           </p>
 
           <ShinyButton className="text-base px-8">
-            Записаться на звонок
+            Попробовать бесплатно
             <ArrowRight className="ml-2 h-4 w-4" />
           </ShinyButton>
         </motion.div>
@@ -47,9 +47,9 @@ export function HeroSection() {
           className="relative"
         >
           <div className="space-y-4">
-            {/* Buyer Message */}
+            {/* Student Message */}
             <div className="flex flex-col items-end gap-2">
-              <span className="text-sm text-muted-foreground">Клиент</span>
+              <span className="text-sm text-muted-foreground">Ученик</span>
               <div className="bg-card border border-border rounded-2xl px-6 py-4 max-w-md shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -67,22 +67,22 @@ export function HeroSection() {
                       />
                     </svg>
                   </div>
-                  <p className="text-sm text-foreground">Привет, можно платить помесячно?</p>
+                  <p className="text-sm text-foreground">Не понимаю задачу №47. Поезд выехал из A в B...</p>
                 </div>
               </div>
             </div>
 
-            {/* Vendor Message */}
+            {/* AI Message 1 */}
             <div className="flex flex-col items-end gap-2">
-              <span className="text-sm text-muted-foreground">Продавец</span>
+              <span className="text-sm text-muted-foreground">МатемАИ</span>
               <div className="bg-primary text-primary-foreground rounded-2xl px-6 py-4 max-w-md shadow-sm">
-                <p className="text-sm">Конечно, вот предложение: launchpad.ru/73d6</p>
+                <p className="text-sm">Давай разберём вместе! Шаг 1: запишем что дано...</p>
               </div>
             </div>
 
-            {/* LaunchPad Message 1 */}
+            {/* AI Message 2 */}
             <div className="flex flex-col items-end gap-2">
-              <span className="text-sm text-muted-foreground">LaunchPad</span>
+              <span className="text-sm text-muted-foreground">МатемАИ</span>
               <div className="bg-card border border-border rounded-2xl px-6 py-4 max-w-md shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -96,14 +96,14 @@ export function HeroSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </div>
-                  <p className="text-sm text-foreground">ИИ-каталог принял предложение</p>
+                  <p className="text-sm text-foreground">Скорость = Расстояние ÷ Время. Подставляем значения...</p>
                 </div>
               </div>
             </div>
 
-            {/* LaunchPad Message 2 */}
+            {/* AI Message 3 */}
             <div className="flex flex-col items-end gap-2">
-              <span className="text-sm text-muted-foreground">LaunchPad</span>
+              <span className="text-sm text-muted-foreground">МатемАИ</span>
               <div className="bg-card border border-border rounded-2xl px-6 py-4 max-w-md shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -117,7 +117,7 @@ export function HeroSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
                   </div>
-                  <p className="text-sm text-foreground">ИИ-каталог создал ссылку на оплату</p>
+                  <p className="text-sm text-foreground">Ответ: 80 км/ч. Понял как решать такие задачи?</p>
                 </div>
               </div>
             </div>

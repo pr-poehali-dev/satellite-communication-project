@@ -5,56 +5,51 @@ import { ShinyButton } from "@/components/ui/shiny-button"
 
 const pricingTiers = [
   {
-    name: "Старт",
-    price: "2 900 ₽",
+    name: "Бесплатный",
+    price: "0 ₽",
     period: "/мес",
-    description: "Идеально для индивидуальных пользователей и небольших команд",
+    description: "Попробуй МатемАИ без оплаты — идеально для знакомства",
     features: [
-      "До 5 участников",
-      "10 ГБ хранилища",
-      "Базовая аналитика",
-      "Поддержка по email",
-      "Основные функции",
-      "Мобильное приложение",
+      "10 задач в день",
+      "Алгебра и геометрия (5–7 кл.)",
+      "Пошаговые объяснения",
+      "История решений",
+      "Мобильная версия",
     ],
-    cta: "Попробовать бесплатно",
+    cta: "Начать бесплатно",
     popular: false,
   },
   {
-    name: "Про",
-    price: "9 900 ₽",
+    name: "Ученик",
+    price: "299 ₽",
     period: "/мес",
-    description: "Для растущих команд с потребностью в расширенных функциях",
+    description: "Для активной подготовки к урокам, ОГЭ и ЕГЭ",
     features: [
-      "До 25 участников",
-      "100 ГБ хранилища",
-      "Расширенная аналитика",
+      "Неограниченно задач",
+      "Все классы (5–11)",
+      "Все разделы математики",
+      "Подготовка к ОГЭ и ЕГЭ",
+      "Трекер прогресса",
+      "Похожие задачи для закрепления",
       "Приоритетная поддержка",
-      "Все функции",
-      "Доступ к API",
-      "Кастомные интеграции",
-      "Расширенная безопасность",
     ],
     cta: "Попробовать бесплатно",
     popular: true,
   },
   {
-    name: "Бизнес",
-    price: "По запросу",
-    period: "",
-    description: "Для крупных организаций с индивидуальными требованиями",
+    name: "Семейный",
+    price: "499 ₽",
+    period: "/мес",
+    description: "Для семей с несколькими детьми-школьниками",
     features: [
-      "Неограниченно участников",
-      "Безлимитное хранилище",
-      "Кастомная аналитика",
+      "До 3 учеников",
+      "Всё из тарифа «Ученик»",
+      "Родительский дашборд",
+      "Отчёт об успеваемости",
+      "Уведомления родителям",
       "Поддержка 24/7",
-      "Все функции",
-      "Кастомный API",
-      "White-label",
-      "Гарантия SLA",
-      "Персональный менеджер",
     ],
-    cta: "Связаться с нами",
+    cta: "Попробовать бесплатно",
     popular: false,
   },
 ]
@@ -70,13 +65,18 @@ export function PricingSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">Простые и прозрачные тарифы</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Выберите идеальный план для вашей команды. Все тарифы включают 14 дней бесплатно.
+          <div className="flex justify-center mb-4">
+            <div className="border border-border py-1 px-4 rounded-lg text-sm text-muted-foreground">Тарифы</div>
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-bold mb-4 text-balance font-display">
+            Доступно каждому школьнику
+          </h2>
+          <p className="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">
+            Начни бесплатно, перейди на полный доступ когда понадобится.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={tier.name}
@@ -84,42 +84,44 @@ export function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative"
             >
+              {tier.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                  <span className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                    Популярный
+                  </span>
+                </div>
+              )}
               <Card
-                className={`relative p-8 h-full flex flex-col ${
-                  tier.popular ? "border-primary shadow-lg shadow-primary/20" : "border-border"
+                className={`p-8 h-full flex flex-col ${
+                  tier.popular ? "border-primary shadow-lg shadow-primary/10" : "border-border"
                 }`}
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                      Популярный
-                    </span>
-                  </div>
-                )}
-
                 <div className="mb-6">
-                  <h3 className="font-display text-2xl font-bold mb-2">{tier.name}</h3>
-                  <p className="text-sm text-muted-foreground">{tier.description}</p>
-                </div>
-
-                <div className="mb-6">
-                  <div className="flex items-baseline">
-                    <span className="text-5xl font-bold">{tier.price}</span>
-                    {tier.period && <span className="text-muted-foreground ml-2">{tier.period}</span>}
+                  <h3 className="text-xl font-bold font-display mb-1">{tier.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{tier.description}</p>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-bold">{tier.price}</span>
+                    <span className="text-muted-foreground">{tier.period}</span>
                   </div>
                 </div>
 
-                <ul className="space-y-3 mb-8 flex-grow">
+                <ul className="space-y-3 mb-8 flex-1">
                   {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <li key={feature} className="flex items-center gap-3">
+                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <ShinyButton className="w-full justify-center">{tier.cta}</ShinyButton>
+                <ShinyButton
+                  variant={tier.popular ? "default" : "secondary"}
+                  className="w-full"
+                >
+                  {tier.cta}
+                </ShinyButton>
               </Card>
             </motion.div>
           ))}

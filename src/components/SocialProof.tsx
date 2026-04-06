@@ -2,10 +2,10 @@ import { motion } from "framer-motion"
 
 export function SocialProof() {
   const companies = [
-    { name: "DOMO", width: 100 },
-    { name: "netradyne", width: 140 },
-    { name: "SOPHOS", width: 140 },
-    { name: "RobCo", width: 120 },
+    { name: "Алгебра 7–9", width: 140 },
+    { name: "Геометрия", width: 120 },
+    { name: "ОГЭ / ЕГЭ", width: 120 },
+    { name: "Задачники Петерсон", width: 180 },
   ]
 
   return (
@@ -21,13 +21,13 @@ export function SocialProof() {
             className="text-center lg:text-left"
           >
             <p className="text-lg text-muted-foreground">
-              Нам доверяют более 2 000
+              Задачи из популярных
               <br />
-              продавцов и покупателей
+              учебников и программ
             </p>
           </motion.div>
 
-          {/* Right side: Company logos in a horizontal row */}
+          {/* Right side: Subjects in a horizontal row */}
           <div className="flex items-center gap-8 md:gap-12 flex-wrap justify-center lg:justify-end flex-1">
             {companies.map((company, index) => (
               <motion.div
