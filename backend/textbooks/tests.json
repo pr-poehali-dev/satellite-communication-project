@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "name": "Get textbooks for grade 7",
+      "method": "GET",
+      "path": "/?grade=7",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Get textbooks for grade 10",
+      "method": "GET",
+      "path": "/?grade=10",
+      "expectedStatus": 200
+    }
+  ]
+}

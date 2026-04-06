@@ -5,6 +5,7 @@ export interface User {
   email: string
   name: string
   grade: number | null
+  textbook_id: number | null
 }
 
 interface AuthContextType {

@@ -29,7 +29,10 @@ export default function Dashboard() {
       body: JSON.stringify({ action: "set_grade", user_id: user.id, grade: selected }),
     })
     const data = await res.json()
-    if (res.ok) updateUser(data)
+    if (res.ok) {
+      updateUser(data)
+      navigate("/books")
+    }
     setLoading(false)
   }
 
