@@ -4,7 +4,7 @@
       "name": "Register new user",
       "method": "POST",
       "path": "/",
-      "body": {"action": "register", "email": "test_matemai2@example.com", "password": "test1234", "name": "Тест"},
+      "body": {"action": "register", "email": "test_matemai3@example.com", "password": "test1234", "name": "Тест"},
       "expectedStatus": 200
     },
     {

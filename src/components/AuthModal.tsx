@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { ShinyButton } from "@/components/ui/shiny-button"
@@ -8,6 +9,7 @@ const AUTH_URL = "https://functions.poehali.dev/784177df-b493-47ab-b6c7-c799e2b7
 
 export function AuthModal() {
   const { authOpen, setAuthOpen, login } = useAuth()
+  const navigate = useNavigate()
   const [mode, setMode] = useState<"login" | "register">("login")
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -43,6 +45,7 @@ export function AuthModal() {
       } else {
         login(data)
         reset()
+        navigate("/dashboard")
       }
     } catch {
       setError("Ошибка соединения. Попробуй ещё раз.")

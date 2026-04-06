@@ -1,15 +1,17 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react"
 
-interface User {
+export interface User {
   id: number
   email: string
   name: string
+  grade: number | null
 }
 
 interface AuthContextType {
   user: User | null
   login: (user: User) => void
   logout: () => void
+  updateUser: (user: User) => void
   authOpen: boolean
   setAuthOpen: (open: boolean) => void
 }
@@ -31,13 +33,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setAuthOpen(false)
   }
 
+  const updateUser = (u: User) => {
+    setUser(u)
+    localStorage.setItem("matemai_user", JSON.stringify(u))
+  }
+
   const logout = () => {
     setUser(null)
     localStorage.removeItem("matemai_user")
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, authOpen, setAuthOpen }}>
+    <AuthContext.Provider value={{ user, login, logout, updateUser, authOpen, setAuthOpen }}>
       {children}
     </AuthContext.Provider>
   )

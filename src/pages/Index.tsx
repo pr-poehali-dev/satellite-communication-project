@@ -7,12 +7,10 @@ import { FeaturesSlideshowSection } from "@/components/FeaturesSlideshowSection"
 import { TestimonialsSection } from "@/components/TestimonialsSection"
 import { PricingSection } from "@/components/PricingSection"
 import { FAQSection } from "@/components/FAQSection"
-import { AuthProvider } from "@/context/AuthContext"
 import { AuthModal } from "@/components/AuthModal"
 
 export default function Index() {
   return (
-    <AuthProvider>
     <div className="min-h-screen">
       <Navigation />
       <AuthModal />
@@ -102,6 +100,5 @@ export default function Index() {
         </div>
       </footer>
     </div>
-    </AuthProvider>
   )
 }
