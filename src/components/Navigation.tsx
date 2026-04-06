@@ -1,7 +1,10 @@
 import { ShinyButton } from "@/components/ui/shiny-button"
 import { motion } from "framer-motion"
+import { useAuth } from "@/context/AuthContext"
 
 export function Navigation() {
+  const { user, logout, setAuthOpen } = useAuth()
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -28,10 +31,23 @@ export function Navigation() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <ShinyButton variant="secondary" className="hidden sm:inline-flex">
-              Войти
-            </ShinyButton>
-            <ShinyButton>Попробовать бесплатно</ShinyButton>
+            {user ? (
+              <>
+                <span className="hidden sm:block text-sm text-muted-foreground">
+                  Привет, <span className="text-foreground font-medium">{user.name || user.email}</span>!
+                </span>
+                <ShinyButton variant="secondary" onClick={logout} className="hidden sm:inline-flex">
+                  Выйти
+                </ShinyButton>
+              </>
+            ) : (
+              <>
+                <ShinyButton variant="secondary" className="hidden sm:inline-flex" onClick={() => setAuthOpen(true)}>
+                  Войти
+                </ShinyButton>
+                <ShinyButton onClick={() => setAuthOpen(true)}>Попробовать бесплатно</ShinyButton>
+              </>
+            )}
           </div>
         </div>
       </div>

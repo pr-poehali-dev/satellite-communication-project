@@ -7,11 +7,15 @@ import { FeaturesSlideshowSection } from "@/components/FeaturesSlideshowSection"
 import { TestimonialsSection } from "@/components/TestimonialsSection"
 import { PricingSection } from "@/components/PricingSection"
 import { FAQSection } from "@/components/FAQSection"
+import { AuthProvider } from "@/context/AuthContext"
+import { AuthModal } from "@/components/AuthModal"
 
 export default function Index() {
   return (
+    <AuthProvider>
     <div className="min-h-screen">
       <Navigation />
+      <AuthModal />
       <main>
         <HeroSection />
         <SocialProof />
@@ -26,9 +30,9 @@ export default function Index() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-bold mb-4">LaunchPad</h3>
+              <h3 className="font-bold mb-4">МатемАИ</h3>
               <p className="text-sm text-muted-foreground">
-                Строим будущее продуктивности с помощью ИИ-инструментов.
+                ИИ-помощник по математике для школьников 5–11 классов.
               </p>
             </div>
             <div>
@@ -93,10 +97,11 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground">
-            &copy; 2025 LaunchPad. Все права защищены.
+            &copy; 2025 МатемАИ. Все права защищены.
           </div>
         </div>
       </footer>
     </div>
+    </AuthProvider>
   )
 }
