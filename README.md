@@ -1,3 +1,7 @@
-# satellite-communication-project
+# SaaS Лендинг — LaunchPad
 
-Initial repository setup for pr-poehali-dev/satellite-communication-project
+![Preview](preview.png)
+
+Современный лендинг для SaaS-продукта с фокусом на финтех и автоматизацию продаж. Включает Hero-секцию с интерактивным чат-интерфейсом, социальное доказательство с логотипами партнеров, блок функций, пошаговое описание работы сервиса, слайдер возможностей, отзывы клиентов, тарифные планы и FAQ. Анимации на Framer Motion, адаптивный дизайн.
+
+`"tags": ["saas", "landing", "light", "fintech", "pricing", "testimonials", "animations"]`
