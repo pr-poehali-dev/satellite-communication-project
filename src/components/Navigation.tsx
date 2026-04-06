@@ -42,10 +42,7 @@ export function Navigation() {
               </>
             ) : (
               <>
-                <ShinyButton variant="secondary" className="hidden sm:inline-flex" onClick={() => setAuthOpen(true)}>
-                  Войти
-                </ShinyButton>
-                <ShinyButton onClick={() => setAuthOpen(true)}>Попробовать бесплатно</ShinyButton>
+                <ShinyButton onClick={() => setAuthOpen(true)}>Вход</ShinyButton>
               </>
             )}
           </div>
