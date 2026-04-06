@@ -32,7 +32,7 @@ export function PricingSection() {
             Полностью бесплатно
           </h2>
           <p className="text-lg text-muted-foreground text-balance max-w-2xl mx-auto">
-            МатемАИ — школьный проект. Весь функционал открыт для всех без оплаты и регистрации.
+            Весь функционал открыт для всех без оплаты и регистрации.
           </p>
         </motion.div>
 
@@ -45,9 +45,6 @@ export function PricingSection() {
         >
           <Card className="p-8 border-primary shadow-lg shadow-primary/10 flex flex-col items-center text-center">
             <div className="mb-6">
-              <div className="inline-block bg-primary/10 text-primary text-sm font-semibold px-4 py-1 rounded-full mb-4">
-                Школьный проект
-              </div>
               <div className="flex items-baseline gap-1 justify-center">
                 <span className="text-6xl font-bold">0 ₽</span>
               </div>
